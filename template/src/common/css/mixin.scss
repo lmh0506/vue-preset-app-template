@@ -1,0 +1,91 @@
+@mixin mq($mqString) {
+  @media #{$mqString} {
+    @content;
+  }
+}
+
+// 通过行高居中
+@mixin lineCenter($height: 0px, $align: center) {
+  height: $height;
+  line-height: $height;
+  text-align: $align
+}
+
+// 通过flex居中
+@mixin flex($justifyContent: center, $alignItems: center){
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin circle($height) {
+  width: $height;
+  height: $height;
+  @include flexCenter();
+  border-radius: 50%;
+}
+
+@mixin flexCenter($align: center){
+  display: flex;
+  justify-content: $align;
+  align-items: center;
+}
+
+@mixin selectStyle() {
+  height: 36px;
+  border: 1px solid $selectBorder;
+  background: transparent;
+  color: $fontColor;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-size: 14px;
+}
+
+@mixin btn($width: 112px, $height: 34px, $bg: $navBlue, $radius: 2px) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  background: $bg;
+  font-size: 14px;
+  text-align: center;
+  line-height: $height;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+@mixin boxBg($width, $height, $bg) {
+  width: $width;
+  height: $height;
+  box-sizing: border-box;
+  background-image: url($bg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+@mixin lightText($fontSize: $title-font-size, $fontFamily: 'PingFang SC', $color: #fff, $shadow: 0 0 4px rgba(104,239,255,0.73)) {
+  font-size: $fontSize;
+  color: $color;
+  text-shadow: $shadow;
+  font-family: $fontFamily;
+}
+
+// 超出显示省略号
+@mixin textEllipsis(){
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+// 设置倍图
+@mixin bgImage($url, $width: 10px, $height: 10px, $bgSize: 100% 100%) {
+  background-image: url($url + "@2x.png");    
+  @media only screen and (-Webkit-min-device-pixel-ratio: 3),
+    only screen and (-moz-min-device-pixel-ratio: 3), 
+    only screen and (-o-min-device-pixel-ratio: 3), 
+    only screen and (min-device-pixel-ratio: 3){        
+    background-image: url($url + "@3x.png");    
+  }
+  width: $width;
+  height: $height;
+  background-size: $bgSize;
+}

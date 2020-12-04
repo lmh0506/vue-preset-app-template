@@ -1,0 +1,157 @@
+.animated {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+// 从右滑入
+@keyframes slideInRightEnter {
+  from {
+    transform: translate3d(100%, 0, 0);
+    z-index: 999;
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    z-index: 999;
+  }
+}
+
+.slideInRightEnter {
+  animation-name: slideInRightEnter;
+}
+// 向右滑出
+@keyframes slideOutRightLeave {
+  from {
+    transform: translate3d(0, 0, 0);
+    z-index: -1;
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+    z-index: -1;
+  }
+}
+
+.slideOutRightLeave {
+  animation-name: slideOutRightLeave;
+}
+
+// 从右滑入 离开样式
+@keyframes slideInRightLeave {
+  from {
+    transform: translate3d(100%, 0, 0);
+    z-index: -1;
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    z-index: -1;
+  }
+}
+
+.slideInRightLeave {
+  animation-name: slideInRightLeave;
+}
+// 向右滑出
+@keyframes slideOutRightEnter {
+  from {
+    transform: translate3d(0, 0, 0);
+    z-index: 999;
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+    z-index: 999;
+  }
+}
+
+.slideOutRightEnter {
+  animation-name: slideOutRightEnter;
+}
+
+
+// 向右滑出
+@keyframes slideOutLeftLeave {
+  from {
+    transform: translate3d(0, 0, 0);
+    z-index: -1;
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+    z-index: -1;
+  }
+}
+
+.slideOutLeftLeave {
+  animation-name: slideOutLeftLeave;
+}
+
+// 从右滑入 离开样式
+@keyframes slideInLeftLeave {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    z-index: -1;
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    z-index: -1;
+  }
+}
+
+.slideInLeftLeave {
+  animation-name: slideInLeftLeave;
+}
+
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+@keyframes slideOutDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
