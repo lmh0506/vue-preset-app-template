@@ -1,12 +1,5 @@
 module.exports = {
   plugins: {
-    'postcss-import': {},
-    'postcss-url': {},
-    'postcss-aspect-ratio-mini': {},
-    'postcss-write-svg': {
-      utf8: false
-    },
-    'postcss-cssnext': {},
     'postcss-px-to-viewport': {
       viewportWidth: 325, // 视窗的宽度，对应的是我们设计稿的宽度，一般是750
       unitPrecision: 3, // 指定`px`转换为视窗单位值的小数位数（很多时候无法整除）
@@ -16,13 +9,6 @@ module.exports = {
       minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值
       mediaQuery: false, // 允许在媒体查询中转换`px`
       exclude: /node_modules/
-    },
-    'postcss-viewport-units': {},
-    cssnano: {
-      'cssnano-preset-advanced': {
-        zindex: false,
-        autoprefixer: false
-      }
     }
   }
 }
