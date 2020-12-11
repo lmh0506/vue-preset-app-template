@@ -1,5 +1,32 @@
 
 import { Toast } from 'vant'
+import { request } from '@/common/js/ajax'
+
+/**
+ * 将 apiConfig 里的接口地址配置 转换成请求函数
+ * apiConfig = {
+ *  get: { key: val } get请求地址对应， key 为请求函数名, val 为接口地址
+ *  post: { key: val } post请求地址对应， key 为请求函数名, val 为接口地址
+ *  put: { key: val } put请求地址对应， key 为请求函数名, val 为接口地址
+ *  delete: { key: val } delete请求地址对应， key 为请求函数名, val 为接口地址
+ * }, 提交的参数
+ */
+export function createApis(apiConfig) {
+  const APIS = {}
+
+  for (const method in apiConfig) {
+    const methodApis = apiConfig[method]
+    for (const key in methodApis) {
+      APIS[key] = (obj) => request({
+        url: methodApis[key],
+        method,
+        ...obj
+      })
+    }
+  }
+
+  return APIS
+}
 
 /**
  * data = {}, 提交的参数
