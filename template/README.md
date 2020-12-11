@@ -14,21 +14,26 @@ npm run serve
 ```
 npm run build 或 npm run build:production
 ```
+
 ### 打包测试环境
 ```
 npm run build:test
 ```
+
 ### 打包开发环境
 ```
 npm run build:localprod
 ```
+
 ### Lints and fixes files
 ```
 npm run lint
 ```
+
 ### SCSS 全局变量，mixin引入
 - 由于每次手动引入全局变量和mixin太麻烦了，将他们设置为全局引入
 - 再去vscode上下个 **SCSS IntelliSense** 插件配合使用，会有代码提示，便于提高开发效率
+
 ```js
 vue.config.js中全局引入设置
 看自己package.json中有哪个loader就用哪个
@@ -76,6 +81,7 @@ export default createApis({
   get: { test: '/b/test' }
 })
 ```
+
 ### 变量文件
 - 开发环境变量文件 .env.development(本地运行时用), .env.localprod(打包时用)
 - 测试环境变量文件 .env.test
@@ -83,5 +89,6 @@ export default createApis({
 
 ### 使用vw实现移动端适配
 [如何在Vue项目中使用vw实现移动端适配](https://www.jianshu.com/p/1f1b23f8348f)
+
 ### vant官网
 [vant官网](https://youzan.github.io/vant/#/zh-CN/)
