@@ -4,13 +4,13 @@
 ### 使用远程 Preset
 
 ``` bash
-vue create --preset direct:ssh://git@git.citycloud.com.cn:3022/cgyykf-one/vue-app-vw-template.git --clone my-project
+vue create --preset lmh0506/vue-preset-app-template my-project
 ```
 
 ### 加载文件系统中的 Preset
 
 当开发一个远程 preset 的时候，你必须不厌其烦的向远程 repo 发出 push 进行反复测试。为了简化这个流程，你也可以直接在本地测试 preset。如果 `--preset` 选项的值是一个相对或绝对文件路径，或是以 `.json` 结尾，则 Vue CLI 会加载本地的 preset：
-[下载地址](https://git.citycloud.com.cn:3000/cgyykf-one/vue-app-vw-template)
+[下载地址](https://github.com/lmh0506/vue-preset-app-template)
 ``` bash
 # ./my-preset 应当是一个包含 preset.json 的文件夹
 vue create --preset ./vue-app-vw-template my-project
