@@ -10,6 +10,7 @@ import { request } from '@/common/js/ajax'
  *  put: { key: val } put请求地址对应， key 为请求函数名, val 为接口地址
  *  delete: { key: val } delete请求地址对应， key 为请求函数名, val 为接口地址
  * }, 提交的参数
+ * 其他参数与 @/common/js/ajax 文件相同
  */
 export function createApis(apiConfig) {
   const APIS = {}
